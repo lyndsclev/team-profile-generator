@@ -163,6 +163,9 @@ const addEngineer = () => {
         
         // confirm engineer is added to teamArr 
         console.log(teamArr); 
+
+        // ask whether to add another team member
+        buildTeam(); 
     }); 
 };
 
@@ -232,13 +235,15 @@ const addIntern = () => {
         
         // confirm intern is added to teamArr 
         console.log(teamArr); 
+
+        // ask whether to add another team member
+        buildTeam(); 
     }); 
-}
+};
 
-
-
-
-// call function to start application 
+// start app
 addManager()
+
+// continue building team
 .then(buildTeam); 
 
