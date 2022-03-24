@@ -92,8 +92,7 @@ const buildTeam = () => {
         } else if (answer.newTeamMember === 'Yes, add an Intern') {
             addIntern(); 
         } else {
-
-            // write HTML file using template 
+            createPage(); 
         }
     });
 };
@@ -169,7 +168,6 @@ const addEngineer = () => {
     }); 
 };
 
-
 // intern prompts 
 const addIntern = () => {
     return inquirer.prompt([
@@ -240,6 +238,16 @@ const addIntern = () => {
         buildTeam(); 
     }); 
 };
+
+// function to create page 
+const createPage = () => {
+    fs.writeFile('./dist/index.html', 'hello world', err => {
+        if(err) {
+            console.log(err)
+            return
+        }
+    })
+}; 
 
 // start app
 addManager()
