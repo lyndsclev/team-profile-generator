@@ -6,6 +6,8 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer'); 
 const Intern = require('./lib/Intern'); 
 
+const generatePage = require('./src/pageTemplate'); 
+
 // team array 
 const teamArr = []; 
 
@@ -241,7 +243,7 @@ const addIntern = () => {
 
 // function to create page 
 const createPage = () => {
-    fs.writeFile('./dist/index.html', 'hello world', err => {
+    fs.writeFile('./dist/index.html', generatePage(), err => {
         if(err) {
             console.log(err)
             return
