@@ -1,8 +1,51 @@
-// create cards for employee
 
-// html 
+// create employee cards 
+const employeeCards = (data) => {
+    
+    // set empty array for cards 
+    let cardsArr = []; 
 
-const generatePage = () => {
+    data.forEach(employee => {
+        
+        // destruct object 
+        const {name, id, email, role, github, officeNumber, school} = employee; 
+
+        // conditional statement for non-common key/value pairs
+        let uniqueField = ''; 
+        let uniqueFieldVal; 
+
+        if(github) {
+            uniqueField = 'GitHub'; 
+            uniqueFieldVal = github; 
+        } else if(school) {
+            uniqueField = 'School'; 
+            uniqueFieldVal = school; 
+        } else if(officeNumber) {
+            uniqueField = 'Office #'; 
+            uniqueFieldVal = officeNumber; 
+        }; 
+        
+        // html for cards 
+        let card = `
+        <div class="card">
+            <div class="card-content">
+                <div class="content">
+                    <p>${name}</p>
+                </div>
+            </div>
+        </div>
+        `;
+
+        // push card to array 
+        cardsArr.push(card); 
+    });
+
+    // return cards
+    return cardsArr.join(''); 
+};
+
+// function to write page 
+const generatePage = (data) => {
     return `
     <!DOCTYPE html>
     <html lang="en">
@@ -20,6 +63,7 @@ const generatePage = () => {
 
     <main>
     <p>Hello World!</p>
+    <p>${employeeCards(data)}</p>
     </main>
 
     <footer>
@@ -27,8 +71,8 @@ const generatePage = () => {
         
     </body>
     </html>
-
     `
 }; 
 
+// export function to index.js 
 module.exports = generatePage; 

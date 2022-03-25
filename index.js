@@ -243,7 +243,7 @@ const addIntern = () => {
 
 // function to create page 
 const createPage = () => {
-    fs.writeFile('./dist/index.html', generatePage(), err => {
+    fs.writeFile('./dist/index.html', generatePage(teamArr), err => {
         if(err) {
             console.log(err)
             return
