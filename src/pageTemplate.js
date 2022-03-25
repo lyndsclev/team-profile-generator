@@ -15,22 +15,32 @@ const employeeCards = (data) => {
         let uniqueFieldVal; 
 
         if(github) {
-            uniqueField = 'GitHub'; 
-            uniqueFieldVal = github; 
+            uniqueField = 'GITHUB:'; 
+            uniqueFieldVal = `<a href="https://github.com/${github}" target="_blank">${github}</a>`; 
         } else if(school) {
-            uniqueField = 'School'; 
+            uniqueField = 'SCHOOL:'; 
             uniqueFieldVal = school; 
         } else if(officeNumber) {
-            uniqueField = 'Office #'; 
+            uniqueField = 'OFFICE:'; 
             uniqueFieldVal = officeNumber; 
         }; 
         
         // html for cards 
         let card = `
-        <div class="card">
-            <div class="card-content">
-                <div class="content">
-                    <p>${name}</p>
+        <div class="column">
+            <div class="card has-background-primary-light">
+
+                <header class="card-header has-background-primary">
+                    <p class="card-header-title has-text-white is-size-3">${name}<p>
+                </header>
+
+                <div class="card-content">
+                    <div class="content">
+                        <div class="box">ROLE: ${role}</div>
+                        <div class="box">ID: ${id}</div>
+                        <div class="box">EMAIL: <a href="mailto:${email}">${email}</a></div>
+                        <div class="box">${uniqueField} ${uniqueFieldVal}</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -58,16 +68,15 @@ const generatePage = (data) => {
     </head>
     <body>
     
-    <header>
+    <header class="hero is-link">
+        <div class="hero-body has-text-centered">
+          <p class="title is-2">Meet Our Team!</p>
+        </div>
     </header>
 
     <main>
-    <p>Hello World!</p>
-    <p>${employeeCards(data)}</p>
+    <div class="columns is-desktop is-justify-content-center m-4">${employeeCards(data)}</div>
     </main>
-
-    <footer>
-    </footer>
         
     </body>
     </html>
