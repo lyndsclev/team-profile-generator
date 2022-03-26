@@ -36,10 +36,10 @@ const employeeCards = (data) => {
 
                 <div class="card-content">
                     <div class="content">
-                        <div class="box">ROLE: ${role}</div>
-                        <div class="box">ID: ${id}</div>
-                        <div class="box">EMAIL: <a href="mailto:${email}">${email}</a></div>
-                        <div class="box">${uniqueField} ${uniqueFieldVal}</div>
+                        <div class="box p-4 m-3">ROLE: ${role}</div>
+                        <div class="box p-4 m-3">ID: ${id}</div>
+                        <div class="box p-4 m-3">EMAIL: <a href="mailto:${email}">${email}</a></div>
+                        <div class="box p-4 m-3">${uniqueField} ${uniqueFieldVal}</div>
                     </div>
                 </div>
             </div>
@@ -75,7 +75,9 @@ const generatePage = (data) => {
     </header>
 
     <main>
-    <div class="columns is-desktop is-justify-content-center m-4">${employeeCards(data)}</div>
+        <div class="columns is-desktop is-justify-content-center m-4">
+        ${employeeCards(data)}
+        </div>
     </main>
         
     </body>
