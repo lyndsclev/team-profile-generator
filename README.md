@@ -7,6 +7,10 @@
 
   You can find a walkthrough video here: https://drive.google.com/file/d/10e3i0sdsYKPDFJwmkHxFGKWTrTf4gpzB/view.  
 
+  Here's a screenshot of a team profile page generated via the app - 
+  ![demo](images/meet-our-team-demo-page.png)
+
+
   ## Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
